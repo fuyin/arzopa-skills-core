@@ -21,7 +21,7 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```
 
-The installer fetches the full public GitHub repository and copies the 16 core skill directories into the parent skills directory.
+The installer fetches the full GitHub repository and copies the 16 core skill directories into the parent skills directory. The repository must be public or accessible to the employee's local Git credentials.
 
 ## Installed Skills
 

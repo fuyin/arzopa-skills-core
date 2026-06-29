@@ -1,27 +1,53 @@
 # Arzopa Skills Core Agent Rules
 
-Always respond in Chinese when working inside this repository.
+始终使用中文与用户沟通，计划、任务清单、总结和面向用户的解释也使用中文。
 
-## Positioning
+## 仓库定位
 
-This repository is the core skill pack for Arzopa staff workflows. Arzopa is a portable smart display brand focused on portable monitors, digital photo frames, and smart display solutions.
+本仓库是 Arzopa 员工工作流的核心技能包。Arzopa 是便携智能显示品牌，重点覆盖便携显示器、数码相框和智能显示解决方案相关工作。
 
-## Default Skills
+## 工作原则
 
-- Use `planning-with-files` for complex tasks, research, publishing work, or anything that may take 5+ tool calls.
-- Use `karpathy-guidelines` when writing, reviewing, or changing code and workflow artifacts.
-- Use current docs/source before relying on memory for tools, APIs, public product facts, prices, inventory, warranty, logistics, or platform rules.
+- 简洁至上：遵循 KISS 原则，优先选择可维护、直接、足够完整的方案，避免过度工程化和无必要的防御性设计。
+- 事实为本：任何不确定内容都要标注来源和置信度；发现错误时直接修正并继续推进。
+- 深度分析：重要决策从项目结构、业务目标、关键模块和依赖关系出发，不凭印象跳到实现。
+- 性能优先：在不牺牲清晰度的前提下，优先考虑高性能设计和实现。
+- 不保留无意义兼容：可以打破旧格式和旧约定，但要明确迁移影响，不为未要求的兼容性增加复杂度。
 
-## Arzopa Fact Rules
+## 默认技能
 
-- Internal material outranks public sources.
-- Public source priority: official policy/product pages, official LinkedIn, ecommerce platforms, news/reviews, third-party databases.
-- Prices, discounts, stock, Prime Day activity, warranty years, employee count, and founding year are unstable; verify them at task time.
-- Label claims as verified fact, official statement, third-party source, or needs internal verification.
+- 复杂任务、研究任务、发布工作或预计需要 5 次以上工具调用时，使用 `planning-with-files`。
+- 编写、审阅或修改代码和工作流文档时，使用 `karpathy-guidelines`。
+- 用户明确关闭某个技能，或技能不可用时，说明原因并采用最接近的工作方式。
 
-## Editing Rules
+## 调研与事实校验
 
-- Keep the core pack small and staff-oriented.
-- Do not add narrow engineering-only skills to core unless they support broad Arzopa workflows.
-- Do not commit secrets, cookies, tokens, private customer data, or local machine state.
-- Avoid destructive filesystem operations. Do not batch-delete files with scripts.
+- 涉及工具、API、平台规则、公开产品事实、价格、库存、物流、保修或第三方数据时，优先查阅最新文档或源码，再做判断。
+- 内部资料优先级高于公开资料。
+- 公开来源优先级：官方政策或产品页面、官方 LinkedIn、电商平台、新闻或评测、第三方数据库。
+- 价格、折扣、库存、Prime Day 活动、保修年限、员工数量和成立年份属于易变信息，必须在任务当时核验。
+- 对外部信息标注为：已验证事实、官方说法、第三方来源、需要内部确认。
+
+## 开发工作流
+
+- 渐进式开发：先完成必要调研，厘清关键疑点，再设计或编码。
+- 结构化推进：复杂或高风险任务先给出方案，等待用户确认后拆解任务；明确可直接执行的小任务可以直接推进。
+- 优先并行：能拆成独立子任务时，优先用 Multi-agents 或并行工具提高效率。
+- 超过可读性阈值时强制拆分模块、函数或文档段落。
+- 保持变更聚焦，每一处改动都应能追溯到用户请求。
+
+## 代码规范
+
+- TypeScript 不得使用 `any`，包括 `as any`；优先使用精确类型、泛型、判别联合和类型收窄。
+- 优先使用异步 IO。
+- 非必要不显式声明返回值类型，让类型系统从清晰实现中推导。
+- 代码应有必要注释和 log：复杂逻辑需要解释意图，关键流程需要可诊断日志；不要写空洞注释。
+- 不新增未被请求的抽象、配置项或兼容层。
+
+## 编辑与安全规则
+
+- 保持核心技能包小而通用，面向 Arzopa 员工常见工作流。
+- 不要把狭窄的纯工程技能加入 core，除非它能支持广泛的 Arzopa 工作场景。
+- 不提交 secrets、cookies、tokens、私有客户数据或本机状态。
+- 避免破坏性文件操作。禁止用脚本批量删除文件；确需删除时，一个文件一个文件处理。
+- 在飞书 CLI 场景中使用用户身份，不使用应用身份，除非用户明确要求并确认风险。

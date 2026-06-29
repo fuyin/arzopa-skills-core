@@ -1,6 +1,6 @@
 ---
 name: arzopa-skills-core
-description: Installer skill for Arzopa staff core skills. Use after SkillHub installation to fetch the public GitHub skill pack and install the 16 core skills into the local agent skills directory.
+description: Installer skill for Arzopa staff core skills. Use after SkillHub installation to fetch the GitHub skill pack and install the 16 core skills into the local agent skills directory.
 ---
 
 # Arzopa Skills Core Installer
@@ -19,7 +19,7 @@ Bash:
 bash scripts/install.sh
 ```
 
-Default source:
+Default source. The repository must be public or accessible to the employee's local Git credentials:
 
 ```text
 https://github.com/fuyin/arzopa-skills-core.git

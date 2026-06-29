@@ -67,7 +67,7 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```
 
-脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 16 个技能安装到父级技能目录。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
+脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 16 个技能安装到父级技能目录。GitHub 仓库必须是 public，或员工本机 Git 凭据有访问权限。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
 
 ## 推荐默认启用
 
