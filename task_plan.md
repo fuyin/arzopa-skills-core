@@ -42,3 +42,4 @@
 | `GH_TOKEN` invalid | `gh auth status` | 先整理本地包；上传阶段尝试 SSH 或提示重新登录。 |
 | GitHub CLI not logged in | `gh auth status` after clearing `GH_TOKEN` | 启动 `gh auth login --web`，但设备授权未完成，已中止等待。 |
 | SSH unavailable | `ssh -T git@github.com` | `~/.ssh/config` 权限阻塞；`ssh -F none` 连接被关闭。 |
+| GitHub plugin cannot create repo | GitHub plugin discovery | 插件身份为 `fuyin`，安装范围只有个人账号；当前工具只有已有仓库读写，没有新建仓库能力。 |
