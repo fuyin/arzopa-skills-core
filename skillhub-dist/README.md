@@ -4,7 +4,7 @@
 
 ## 作用
 
-这个包不是完整技能合集本体，而是一个轻量安装器。它解决 SkillHub 单包文件数限制问题：先通过 SkillHub 安装入口技能，再由脚本从 GitHub 拉取完整仓库，并把 16 个核心技能安装到本地技能目录。
+这个包不是完整技能合集本体，而是一个轻量安装器。它解决 SkillHub 单包文件数限制问题：先通过 SkillHub 安装入口技能，再由脚本从 GitHub 拉取完整仓库，并把 17 个核心技能安装到本地技能目录。
 
 ## 安装命令
 
@@ -31,6 +31,7 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 | --- | --- |
 | `planning-with-files` | 复杂任务、长期任务、调研任务的文件化计划与进度记录。 |
 | `karpathy-guidelines` | 降低 agent 过度设计、乱改代码、隐藏假设的风险。 |
+| `find-skills` | 帮员工发现、评估和安装更多 agent 技能，适合扩展新能力前先找现成方案。 |
 | `find-docs` | 查询最新技术文档、SDK、CLI、平台 API。 |
 | `exa-search` | 做当前网页、公司、竞品、市场与资料调研。 |
 | `smart-search` | 针对具体网站/平台做智能搜索路由。 |

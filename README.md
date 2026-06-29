@@ -6,12 +6,13 @@ Arzopa 工作人员专属 AI Agent 核心技能包。
 
 ## 概览
 
-核心技能放在 `skills/` 下，共 16 个：
+核心技能放在 `skills/` 下，共 17 个：
 
 | 技能 | 作用 |
 | --- | --- |
 | `planning-with-files` | 用文件保存计划、发现和进度，适合复杂任务、长期调研、跨轮对话工作。 |
 | `karpathy-guidelines` | 约束 agent 少假设、少过度设计、少乱改，适合编码、审查和流程变更。 |
+| `find-skills` | 帮员工发现、评估和安装更多 agent 技能，适合扩展新能力前先找现成方案。 |
 | `find-docs` | 查询最新技术文档、SDK、CLI、平台 API，避免依赖过期记忆。 |
 | `exa-search` | 做当前网页、公司、人物、竞品、市场和资料研究。 |
 | `smart-search` | 按任务自动选择搜索来源，适合指定网站、购物、社交、技术资料等搜索。 |
@@ -42,7 +43,7 @@ Arzopa 工作人员专属 AI Agent 核心技能包。
 
 ## 通过 SkillHub 安装
 
-SkillHub 发布包在 `skillhub-dist/`。它是轻量安装器，不直接内嵌全部 16 个技能。
+SkillHub 发布包在 `skillhub-dist/`。它是轻量安装器，不直接内嵌全部 17 个技能。
 
 ```powershell
 skillhub install arzopa-skills-core --namespace arzopa --dir C:\Users\Administrator\.agents\skills --force
@@ -50,7 +51,7 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```
 
-脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 16 个技能安装到父级技能目录。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
+脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 17 个技能安装到父级技能目录。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
 
 ## 通过 GitHub 安装
 

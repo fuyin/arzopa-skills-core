@@ -1,12 +1,13 @@
 {
   "name": "arzopa-skills-core",
   "namespace": "arzopa",
-  "description": "Arzopa 工作人员专属 AI Agent 核心技能包，覆盖产品事实核验、市场与渠道研究、浏览器自动化、视觉内容生产、Office/PDF 交付和复杂任务规划。",
+  "description": "Arzopa 工作人员专属 AI Agent 核心技能包，覆盖产品事实核验、技能发现、市场与渠道研究、浏览器自动化、视觉内容生产、Office/PDF 交付和复杂任务规划。",
   "layout": "skills-directory",
   "skillsPath": "skills",
   "skills": [
     "planning-with-files",
     "karpathy-guidelines",
+    "find-skills",
     "find-docs",
     "exa-search",
     "smart-search",
