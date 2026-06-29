@@ -16,7 +16,7 @@
 | 1. Inspect | complete | 已确认目标目录为空，GitHub CLI 存在但 `GH_TOKEN` 无效。 |
 | 2. Package | complete | 已复制核心技能并补 README、AGENTS、manifest。 |
 | 3. Verify | complete | 16 个入口、约 35 MB、敏感词命中为示例/安全说明。 |
-| 4. Publish | in_progress | 初始化 Git 仓库并上传 GitHub。 |
+| 4. Publish | blocked | 本地 Git 仓库已初始化并提交；GitHub 上传需要有效登录。 |
 
 ## Core Skill Set
 - `planning-with-files`
@@ -40,3 +40,5 @@
 | Error | Attempt | Resolution |
 | --- | --- | --- |
 | `GH_TOKEN` invalid | `gh auth status` | 先整理本地包；上传阶段尝试 SSH 或提示重新登录。 |
+| GitHub CLI not logged in | `gh auth status` after clearing `GH_TOKEN` | 启动 `gh auth login --web`，但设备授权未完成，已中止等待。 |
+| SSH unavailable | `ssh -T git@github.com` | `~/.ssh/config` 权限阻塞；`ssh -F none` 连接被关闭。 |
