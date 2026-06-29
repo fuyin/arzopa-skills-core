@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.cache/
+.o11y/
+task_plan.local.md
+findings.local.md
+progress.local.md
