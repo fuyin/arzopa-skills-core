@@ -57,6 +57,18 @@ PowerShell 示例：
 Copy-Item -Path .\arzopa-skills-core\skills\* -Destination C:\Users\Administrator\.agents\skills -Recurse
 ```
 
+## 通过 SkillHub 安装
+
+SkillHub 发布包在 `skillhub-dist/`，它是轻量安装器，不直接内嵌全部 16 个技能。
+
+```powershell
+skillhub install arzopa-skills-core --namespace arzopa --dir C:\Users\Administrator\.agents\skills --force
+cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
+.\scripts\install.ps1
+```
+
+脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 16 个技能安装到父级技能目录。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
+
 ## 推荐默认启用
 
 在公司级 `AGENTS.md` 或项目指令中默认启用：

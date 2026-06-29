@@ -1,0 +1,25 @@
+{
+  "name": "arzopa-skills-core",
+  "namespace": "arzopa",
+  "type": "skillhub-installer",
+  "source": "https://github.com/fuyin/arzopa-skills-core.git",
+  "skillsPath": "skills",
+  "installs": [
+    "planning-with-files",
+    "karpathy-guidelines",
+    "find-docs",
+    "exa-search",
+    "smart-search",
+    "agent-browser",
+    "huashu-design",
+    "minimax-docx",
+    "minimax-pdf",
+    "minimax-xlsx",
+    "pptx-generator",
+    "better-icons",
+    "domain-modeling",
+    "xquik-twitter",
+    "opencli-browser",
+    "opencli-browser-sitemap"
+  ]
+}
