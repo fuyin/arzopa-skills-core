@@ -1,11 +1,13 @@
 ---
 name: arzopa-skills-core
-description: Installer skill for Arzopa staff core skills. Use after SkillHub installation to fetch the GitHub skill pack and install the 16 core skills into the local agent skills directory.
+description: Arzopa 工作人员专属核心技能包安装器。通过 SkillHub 安装后，运行脚本即可从 GitHub 拉取完整技能包，并把 16 个核心技能安装到本地 agent 技能目录。
 ---
 
-# Arzopa Skills Core Installer
+# Arzopa Skills Core 安装器
 
-This SkillHub package installs a small entry skill. Run the bundled installer script to fetch the full Arzopa core skill pack from GitHub and install the 16 core skills into your local agent skills directory.
+这是 Arzopa 工作人员专属核心技能包的 SkillHub 入口。
+
+SkillHub 只安装一个轻量入口技能。安装后运行随包脚本，脚本会从 GitHub 拉取完整 `arzopa-skills-core` 仓库，并把 16 个核心技能安装到本地 agent 技能目录。
 
 PowerShell:
 
@@ -19,7 +21,7 @@ Bash:
 bash scripts/install.sh
 ```
 
-Default source. The repository must be public or accessible to the employee's local Git credentials:
+默认来源：
 
 ```text
 https://github.com/fuyin/arzopa-skills-core.git

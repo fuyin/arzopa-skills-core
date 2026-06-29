@@ -2,7 +2,30 @@
 
 Arzopa 工作人员专属 AI Agent 核心技能包。
 
-这个包面向 Arzopa 的日常流程：产品事实核验、市场与渠道研究、竞品监控、内容与视觉生产、Office/PDF 交付、网页自动化和复杂任务规划。
+这个仓库面向 Arzopa 日常流程：产品事实核验、市场与渠道研究、竞品监控、内容与视觉生产、Office/PDF 交付、网页自动化和复杂任务规划。
+
+## 概览
+
+核心技能放在 `skills/` 下，共 16 个：
+
+| 技能 | 作用 |
+| --- | --- |
+| `planning-with-files` | 用文件保存计划、发现和进度，适合复杂任务、长期调研、跨轮对话工作。 |
+| `karpathy-guidelines` | 约束 agent 少假设、少过度设计、少乱改，适合编码、审查和流程变更。 |
+| `find-docs` | 查询最新技术文档、SDK、CLI、平台 API，避免依赖过期记忆。 |
+| `exa-search` | 做当前网页、公司、人物、竞品、市场和资料研究。 |
+| `smart-search` | 按任务自动选择搜索来源，适合指定网站、购物、社交、技术资料等搜索。 |
+| `agent-browser` | 浏览器自动化，用于打开网页、截图、填写表单、抓取页面、测试网页流程。 |
+| `huashu-design` | 用 HTML 交付高保真原型、视觉稿、广告演示、幻灯片、动效和设计评审。 |
+| `minimax-docx` | 创建、编辑和格式化 Word 文档，适合报告、合同、提案、客服/法务文档。 |
+| `minimax-pdf` | 创建、填写和重排 PDF，适合对外报告、品牌化资料、产品说明和表单。 |
+| `minimax-xlsx` | 读取、创建、编辑和校验表格，适合 SKU 表、价格表、竞品表、渠道表。 |
+| `pptx-generator` | 生成和编辑 PowerPoint，适合汇报、销售提案、渠道方案、产品演示。 |
+| `better-icons` | 搜索和获取 SVG 图标，辅助页面、PPT、原型和视觉设计。 |
+| `domain-modeling` | 沉淀 Arzopa 产品、渠道、客服、法务等领域术语和决策记录。 |
+| `xquik-twitter` | 使用 Xquik 处理 X/Twitter 搜索、账号查询、KOL/竞品监控和受控发布流程。 |
+| `opencli-browser` | 通过 OpenCLI 操作真实浏览器和登录态页面，适合后台、平台和复杂站点任务。 |
+| `opencli-browser-sitemap` | 使用站点地图指导复杂网页流程，减少盲点点击和错误路径。 |
 
 ## 适用对象
 
@@ -17,49 +40,9 @@ Arzopa 工作人员专属 AI Agent 核心技能包。
 - 产品规格、渠道状态、售后政策和法律主体信息必须区分“已核实事实”“官网表述”“第三方资料”“待内部核验”。
 - 默认把 Arzopa 视为 DTC + marketplace + affiliate + distributor 混合渠道品牌。
 
-## 技能目录
-
-核心技能放在 `skills/` 下：
-
-| 技能 | 用途 |
-| --- | --- |
-| `planning-with-files` | 复杂任务、长期任务、调研任务的文件化计划与进度记录。 |
-| `karpathy-guidelines` | 降低 agent 过度设计、乱改代码、隐藏假设的风险。 |
-| `find-docs` | 查询最新技术文档、SDK、平台 API。 |
-| `exa-search` | 当前网页、公司、竞品、市场与资料调研。 |
-| `smart-search` | 针对具体网站/平台做智能搜索路由。 |
-| `agent-browser` | 官网、电商平台、后台页面、竞品页面的浏览器自动化。 |
-| `huashu-design` | 高保真 HTML 原型、视觉素材、广告演示、幻灯片和动效。 |
-| `minimax-docx` | Word 报告、合同、提案、客服/法务文档。 |
-| `minimax-pdf` | 对外 PDF、品牌化报告、产品资料。 |
-| `minimax-xlsx` | SKU 表、价格表、竞品表、渠道表、运营数据表。 |
-| `pptx-generator` | 汇报、销售提案、渠道方案、产品演示文稿。 |
-| `better-icons` | 图标搜索与 SVG 获取。 |
-| `domain-modeling` | 梳理 Arzopa 产品、渠道、客服、法务等领域术语。 |
-| `xquik-twitter` | X/Twitter 舆情、KOL、竞品监控和受控发布流程。 |
-| `opencli-browser` | 通过 OpenCLI 操作真实浏览器和登录态页面。 |
-| `opencli-browser-sitemap` | 使用站点地图指导复杂网页流程。 |
-
-## 安装
-
-把仓库克隆到本地技能目录：
-
-```powershell
-cd C:\Users\Administrator\.agents\skills
-git clone https://github.com/arzopa/arzopa-skills-core.git arzopa-skills-core
-```
-
-如果你的 agent 只扫描一层技能目录，可以把 `skills/` 下的目录复制到实际扫描目录。
-
-PowerShell 示例：
-
-```powershell
-Copy-Item -Path .\arzopa-skills-core\skills\* -Destination C:\Users\Administrator\.agents\skills -Recurse
-```
-
 ## 通过 SkillHub 安装
 
-SkillHub 发布包在 `skillhub-dist/`，它是轻量安装器，不直接内嵌全部 16 个技能。
+SkillHub 发布包在 `skillhub-dist/`。它是轻量安装器，不直接内嵌全部 16 个技能。
 
 ```powershell
 skillhub install arzopa-skills-core --namespace arzopa --dir C:\Users\Administrator\.agents\skills --force
@@ -67,7 +50,22 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```
 
-脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 16 个技能安装到父级技能目录。GitHub 仓库必须是 public，或员工本机 Git 凭据有访问权限。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
+脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 16 个技能安装到父级技能目录。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
+
+## 通过 GitHub 安装
+
+也可以直接克隆仓库：
+
+```powershell
+cd C:\Users\Administrator\.agents\skills
+git clone https://github.com/fuyin/arzopa-skills-core.git arzopa-skills-core
+```
+
+如果你的 agent 只扫描一层技能目录，可以把 `skills/` 下的目录复制到实际扫描目录：
+
+```powershell
+Copy-Item -Path .\arzopa-skills-core\skills\* -Destination C:\Users\Administrator\.agents\skills -Recurse
+```
 
 ## 推荐默认启用
 
