@@ -1,12 +1,12 @@
 # Arzopa Skills Core Progress
 
 ## 2026-06-29 AGENTS.md 更新
-- 已按用户最新要求，将 `arzopa-skills-core/AGENTS.md` 替换为中文工作规范。
-- 默认技能规则调整为 `$planning-with-files` 与 `$karpathy-guidelines`。
+- 已根据用户反馈，不做整段替换；从用户提供内容中提取对 agent 有用的原则，并与原有 Arzopa 定位、事实校验、编辑安全规则重新整合。
+- 默认技能规则保留为 `planning-with-files` 与 `karpathy-guidelines`。
 - 保持修改范围集中，未改动技能包源码与发布配置。
-- 根据用户反馈，不再做整段替换；已从用户提供内容中提取对 agent 有用的原则，并与原有 Arzopa 定位、事实校验、编辑安全规则重新整合。
-- 已发布 SkillHub 包：`arzopa/arzopa-skills-core@20260629.075702`，详情页 `https://skillhub.arzopa.com/space/arzopa/arzopa-skills-core`。
-- GitHub 仓库经插件确认仍为 `private`；`gh repo edit --visibility public` 因本机 `gh` 未登录失败。SkillHub 安装脚本已改为说明“仓库必须 public 或员工 Git 凭据可访问”。
+- GitHub 仓库经插件确认已为 `public`：`https://github.com/fuyin/arzopa-skills-core`。
+- 已发布 SkillHub 包：`arzopa/arzopa-skills-core@20260629.075912`，详情页 `https://skillhub.arzopa.com/space/arzopa/arzopa-skills-core`。
+- SkillHub resolve API 已确认最新版本可解析，版本 ID 为 `42`。
 
 ## 2026-06-29
 - 已创建计划文件。
