@@ -6,6 +6,9 @@
 - 已给已有全局 `AGENTS.md` 增加带时间戳的备份逻辑，避免静默覆盖。
 - 已同步更新 `README.md`、`skillhub-dist/README.md`、`skillhub-dist/SKILL.md` 中的安装说明。
 - PowerShell 脚本语法校验通过；Bash 校验因本机 `bash.exe` 登录会话不可用未执行。
+- 已提交并推送 GitHub：`4d81909 fix: install core skills into codex global`。
+- 已发布 SkillHub 新版本：`arzopa/arzopa-skills-core@20260702.024306`，详情页 `https://skillhub.arzopa.com/space/arzopa/arzopa-skills-core`。
+- SkillHub resolve API 已确认最新版本可解析，versionId 为 `49`，并已通过临时目录安装验证新版 `SKILL.md` 与 `skill-pack.json` 内容。
 
 ## 2026-06-29 AGENTS.md 更新
 - 已根据用户反馈，不做整段替换；从用户提供内容中提取对 agent 有用的原则，并与原有 Arzopa 定位、事实校验、编辑安全规则重新整合。
