@@ -1,5 +1,13 @@
 # Arzopa Skills Core Plan
 
+## 2026-07-02 Goal
+更新 SkillHub 轻量安装器，使一次运行脚本即可把技能组安装到 Codex 全局，并把技能仓库 `AGENTS.md` 安装到 Codex 全局 `AGENTS.md`。
+
+## 2026-07-02 Status
+- Inspect: complete，已确认旧脚本默认写入 SkillHub 包父级目录，未处理 `AGENTS.md`。
+- Implement: complete，已改为默认写入 `$CODEX_HOME` 或 `~/.codex`。
+- Verify: partial，PowerShell 语法通过；Bash 因本机 `bash.exe` 登录会话不可用未执行。
+
 ## Goal
 整理一个 Arzopa 工作人员专属核心技能包，放在 `arzopa-skills-core`，并上传到 GitHub。
 

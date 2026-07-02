@@ -4,7 +4,7 @@
 
 ## 作用
 
-这个包不是完整技能合集本体，而是一个轻量安装器。它解决 SkillHub 单包文件数限制问题：先通过 SkillHub 安装入口技能，再由脚本从 GitHub 拉取完整仓库，并把 17 个核心技能安装到本地技能目录。
+这个包不是完整技能合集本体，而是一个轻量安装器。它解决 SkillHub 单包文件数限制问题：先通过 SkillHub 安装入口技能，再由脚本从 GitHub 拉取完整仓库，并把 17 个核心技能和仓库 `AGENTS.md` 安装到 Codex 全局目录。
 
 ## 安装命令
 
@@ -23,6 +23,13 @@ C:\Users\Administrator\.agents\skills\arzopa-skills-core
 ```powershell
 cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
+```
+
+脚本默认写入：
+
+```text
+C:\Users\Administrator\.codex\skills
+C:\Users\Administrator\.codex\AGENTS.md
 ```
 
 ## 技能概览
@@ -53,3 +60,4 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 - PowerShell 加 `-Overwrite` 可覆盖已有技能。
 - Bash 加 `--overwrite` 可覆盖已有技能。
 - 安装脚本不会删除已有技能目录。
+- 已有 Codex 全局 `AGENTS.md` 会先复制为带时间戳的 `.bak-*` 备份，再安装技能仓库的 `AGENTS.md`。

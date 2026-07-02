@@ -1,12 +1,23 @@
 # Arzopa Skills Core Progress
 
+## 2026-07-02 SkillHub 安装器全局化
+- 已将 `skillhub-dist/scripts/install.ps1` 默认目标改为 Codex 全局目录：`$CODEX_HOME` 或 `~/.codex`。
+- 已将 17 个核心技能安装目标改为 Codex 全局 `skills` 目录，并新增仓库根 `AGENTS.md` 到 Codex 全局 `AGENTS.md` 的安装逻辑。
+- 已给已有全局 `AGENTS.md` 增加带时间戳的备份逻辑，避免静默覆盖。
+- 已同步更新 `README.md`、`skillhub-dist/README.md`、`skillhub-dist/SKILL.md` 中的安装说明。
+- PowerShell 脚本语法校验通过；Bash 校验因本机 `bash.exe` 登录会话不可用未执行。
+
 ## 2026-06-29 AGENTS.md 更新
 - 已根据用户反馈，不做整段替换；从用户提供内容中提取对 agent 有用的原则，并与原有 Arzopa 定位、事实校验、编辑安全规则重新整合。
 - 默认技能规则保留为 `planning-with-files` 与 `karpathy-guidelines`。
 - 保持修改范围集中，未改动技能包源码与发布配置。
+- 根据“多数员工不写代码”的反馈，已将重工程化的代码规范简化为面向员工场景的脚本与自动化规则。
 - GitHub 仓库经插件确认已为 `public`：`https://github.com/fuyin/arzopa-skills-core`。
 - 已发布 SkillHub 包：`arzopa/arzopa-skills-core@20260629.075912`，详情页 `https://skillhub.arzopa.com/space/arzopa/arzopa-skills-core`。
 - SkillHub resolve API 已确认最新版本可解析，版本 ID 为 `42`。
+- 已将仓库 README、SkillHub README、SkillHub `SKILL.md` 和两个 `skill-pack.json` 的描述改为中文；README 概览中补充了 16 个技能的作用说明。
+- 已提交并推送中文文档更新：`888c8ed docs: localize skillhub package docs`；已发布 SkillHub 新版本 `arzopa/arzopa-skills-core@20260629.080929`，resolve API 确认为 versionId `43`。
+- 已将 `find-skills` 整合进核心包，核心技能数从 16 个增至 17 个；已更新 README、SkillHub README、SkillHub `SKILL.md`、两个 `skill-pack.json`。
 
 ## 2026-06-29
 - 已创建计划文件。

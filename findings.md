@@ -1,5 +1,10 @@
 # Arzopa Skills Core Findings
 
+## 2026-07-02
+- SkillHub 轻量安装器原先默认把完整技能复制到入口技能包的父级目录，没有写入 Codex 全局目录，也没有安装仓库根目录 `AGENTS.md`。
+- Codex 全局目录在本机确认为 `C:\Users\Administrator\.codex`，其中已有 `skills/` 与 `AGENTS.md`。
+- 新安装目标应默认使用 `$CODEX_HOME`，未设置时回退到 `~/.codex`；技能写入 `skills/`，仓库规则写入全局 `AGENTS.md`。
+
 ## 2026-06-29
 - `arzopa-skills-core` 目录为空，可以直接作为新包根目录。
 - 当前 OK Skills 包含大量工程专用技能；Arzopa 核心包应围绕产品事实核验、市场/渠道研究、内容视觉生产、Office 交付、浏览器自动化。

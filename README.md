@@ -51,7 +51,7 @@ cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```
 
-脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 17 个技能安装到父级技能目录。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
+脚本会从 GitHub 拉取本仓库，并把 `skills/` 下的 17 个技能安装到 Codex 全局 `skills` 目录，同时把仓库根目录 `AGENTS.md` 安装到 Codex 全局 `AGENTS.md`。已有技能默认跳过；需要覆盖时加 `-Overwrite`。
 
 ## 通过 GitHub 安装
 
@@ -66,6 +66,13 @@ git clone https://github.com/fuyin/arzopa-skills-core.git arzopa-skills-core
 
 ```powershell
 Copy-Item -Path .\arzopa-skills-core\skills\* -Destination C:\Users\Administrator\.agents\skills -Recurse
+```
+
+Codex 全局安装目标默认为：
+
+```text
+C:\Users\Administrator\.codex\skills
+C:\Users\Administrator\.codex\AGENTS.md
 ```
 
 ## 推荐默认启用
