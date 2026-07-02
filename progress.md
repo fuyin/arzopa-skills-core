@@ -11,6 +11,8 @@
 - SkillHub resolve API 已确认最新版本可解析，versionId 为 `49`，并已通过临时目录安装验证新版 `SKILL.md` 与 `skill-pack.json` 内容。
 - 已确认 SkillHub CLI 安装流程只执行 resolve、download、extractZip，不支持包内 post-install hook；发布页提供一条 PowerShell 命令，在入口包下载成功后立即触发 `scripts/install.ps1`。
 - 根据用户指定，SkillHub 描述写入入口安装命令：`npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com`。
+- 已提交并推送安装命令文档更新：`c81c465 docs: add one-line skillhub install command`。
+- 已发布 SkillHub 新版本：`arzopa/arzopa-skills-core@20260702.025830`；resolve API 确认为 versionId `50`。
 
 ## 2026-06-29 AGENTS.md 更新
 - 已根据用户反馈，不做整段替换；从用户提供内容中提取对 agent 有用的原则，并与原有 Arzopa 定位、事实校验、编辑安全规则重新整合。
