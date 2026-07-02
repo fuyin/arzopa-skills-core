@@ -45,8 +45,24 @@ Arzopa 工作人员专属 AI Agent 核心技能包。
 
 SkillHub 发布包在 `skillhub-dist/`。它是轻量安装器，不直接内嵌全部 17 个技能。
 
+复制下面这一条 PowerShell 命令即可：先下载入口安装器，下载成功后立即触发完整安装脚本。
+
 ```powershell
-skillhub install arzopa-skills-core --namespace arzopa --dir C:\Users\Administrator\.agents\skills --force
+$dir = Join-Path $env:USERPROFILE ".agents\skills"; npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com --dir $dir --force; if ($LASTEXITCODE -eq 0) { & (Join-Path $dir "arzopa-skills-core\scripts\install.ps1") }
+```
+
+也可以分步执行：
+
+入口安装命令：
+
+```powershell
+npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com
+```
+
+如果需要分步运行完整安装，建议显式指定入口安装目录：
+
+```powershell
+npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com --dir C:\Users\Administrator\.agents\skills --force
 cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```

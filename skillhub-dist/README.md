@@ -6,13 +6,29 @@
 
 这个包不是完整技能合集本体，而是一个轻量安装器。它解决 SkillHub 单包文件数限制问题：先通过 SkillHub 安装入口技能，再由脚本从 GitHub 拉取完整仓库，并把 17 个核心技能和仓库 `AGENTS.md` 安装到 Codex 全局目录。
 
-## 安装命令
+## 推荐安装命令
+
+复制下面这一条 PowerShell 命令即可。它会先通过 SkillHub 下载入口安装器，下载成功后立即触发完整安装脚本，把 17 个核心技能和仓库 `AGENTS.md` 写入 Codex 全局目录。
 
 ```powershell
-skillhub install arzopa-skills-core --namespace arzopa --dir C:\Users\Administrator\.agents\skills --force
+$dir = Join-Path $env:USERPROFILE ".agents\skills"; npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com --dir $dir --force; if ($LASTEXITCODE -eq 0) { & (Join-Path $dir "arzopa-skills-core\scripts\install.ps1") }
 ```
 
-安装后目录为：
+## 分步安装
+
+入口安装命令：
+
+```powershell
+npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com
+```
+
+如果需要分步运行完整安装，建议显式指定入口安装目录：
+
+```powershell
+npx @astron-team/skillhub@latest install arzopa-skills-core --namespace arzopa --registry https://skillhub.arzopa.com --dir C:\Users\Administrator\.agents\skills --force
+```
+
+指定目录后入口包位置为：
 
 ```text
 C:\Users\Administrator\.agents\skills\arzopa-skills-core
@@ -24,6 +40,8 @@ C:\Users\Administrator\.agents\skills\arzopa-skills-core
 cd C:\Users\Administrator\.agents\skills\arzopa-skills-core
 .\scripts\install.ps1
 ```
+
+说明：当前 SkillHub CLI 的安装流程只负责下载并解压技能包，不会自动执行包内脚本。因此“下载完成就触发”通过上面的外层一条命令实现。
 
 脚本默认写入：
 

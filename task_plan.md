@@ -7,6 +7,7 @@
 - Inspect: complete，已确认旧脚本默认写入 SkillHub 包父级目录，未处理 `AGENTS.md`。
 - Implement: complete，已改为默认写入 `$CODEX_HOME` 或 `~/.codex`。
 - Verify: partial，PowerShell 语法通过；Bash 因本机 `bash.exe` 登录会话不可用未执行。
+- Improve trigger: in_progress，将 SkillHub 发布页安装命令改为一条 PowerShell 命令，下载入口包后立即执行完整安装器；描述中使用用户指定的 `npx @astron-team/skillhub@latest ... --registry https://skillhub.arzopa.com` 命令。
 
 ## Goal
 整理一个 Arzopa 工作人员专属核心技能包，放在 `arzopa-skills-core`，并上传到 GitHub。
